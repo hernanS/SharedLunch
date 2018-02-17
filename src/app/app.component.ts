@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Shared Lunch';
+  rootPage: string = 'UserComponent';
+  pages: Array<{ title: string, component: any, icon: string}>;
+  
+  constructor(){
+    this.pages = [
+      { title: 'Login', component: 'LoginPage', icon: "home" },
+      { title: 'test', component: 'TestPage', icon: "test" }
+    ];
+  } 
+
+  openPage(page){
+    console.log("this is page app components", page);
+
+  }
 }
