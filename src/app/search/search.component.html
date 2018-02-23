@@ -1,7 +1,29 @@
-<p>
-  No match
-</p>
-<p>Status: Available</p>
-<button>Change Status</button>
-<button>Search Start</button>
-<button>Match Found</button>
+<div *ngIf="user_info && !user_info.currentMatch">
+  <span>No Match</span>
+  <h2>keep it cool.</h2>
+  <p>Our team is working in the next <br> shared lunch experience.
+  </p>
+  <div>
+    <span><strong>Status:</strong>{{user_info.available ? 'Available':'Unavailable'}}</span>
+    <br>
+    <span>For your next lunch</span>
+    <br>
+    <button mat-raised-button (click)="changeStatus()">Change Status</button>
+    <button mat-raised-button [disabled]="status" (click)="getMatch()">Match</button>
+  </div>
+</div>
+<div *ngIf="user_info && user_info.currentMatch" id="divNomatch">
+  <span>This is your match</span>
+  <span><strong>Get in contact with </strong> {{matchedUser.firstName}} {{matchedUser.lastName}}</span>
+  <br> <span>Use this tools to plan your shared lunch</span><br>
+  <span>{{matchedUser.phone}}</span><span> Teams, </span><span>{{matchedUser.email}}</span>
+  <br>
+  <span><strong>good luck.</strong></span>
+  <br>
+  <button mat-raised-button
+  mat-raised-button (click)="openDialog()" >Cancel lunch</button>
+  <button mat-raised-button routerLink="/lunchfinished">Rate lunch</button>
+  <br>
+  <h2>Note:</h2>
+  <p>Remember to rate your lunch experience, <br> obviously after you are done.</p>
+</div>

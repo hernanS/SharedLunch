@@ -7,7 +7,6 @@
     <label for="exampleInputPassword1">Password</label>
     <input formControlName = "password" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
   </div>
-  <button (click)="login()" type="submit" [disabled]="!myform.valid" class="btn btn-primary">LOGIN</button>
-  <button routerLink="/createuser" type="submit" class="btn btn-primary">I'M NEW</button>
+  <button (click)="save()" type="submit"  [disabled]="!myform.valid" class="btn btn-primary">Save</button>
 </form>
 

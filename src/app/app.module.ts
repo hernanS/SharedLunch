@@ -18,6 +18,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MemoryUserService } from './memory-user.service';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { UserService } from './user.service';
+import { SessionService } from './session.service';
+import { NgModel } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,9 +32,11 @@ import { MemoryUserService } from './memory-user.service';
     MatchFoundComponent,
     DialogComponent,
     LunchFinishedComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateUserComponent
   ],
   imports: [
+    FormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(MemoryUserService),
     BrowserModule,
@@ -41,7 +47,7 @@ import { MemoryUserService } from './memory-user.service';
     AppRoutingModule,
   ],
   exports: [MatButtonModule, MatCheckboxModule],
-  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [SessionService, UserService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
   entryComponents: [
     DialogComponent
   ],

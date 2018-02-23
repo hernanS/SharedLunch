@@ -1,13 +1,16 @@
 How was your lunch
-
-How was your lunch with Name
+<br>
+How was your lunch with <div>{{user_info ? user_info.firstName : 'Unavailable'}}</div>
+<br>
 
 Help us by Ratting your experience
 <br>
-<mat-form-field>
-    <mat-select placeholder="Rate Lunch">
-      <mat-option *ngFor="let experience of experiences" [value]="experience.value">
-        {{ experience.viewValue }}
-      </mat-option>
+  <mat-form-field>
+    <mat-select [(value)]="option">
+      <mat-option value="Good">Good</mat-option>
+      <mat-option value="Meh">Meh</mat-option>
+      <mat-option value="No so great">No so great</mat-option>
     </mat-select>
   </mat-form-field>
+  <button mat-raised-button (click) = "finish_match()">Ok</button>
+  

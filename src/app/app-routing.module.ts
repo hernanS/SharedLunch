@@ -7,12 +7,14 @@ import { SearchingMatchComponent } from './searching-match/searching-match.compo
 import { MatchFoundComponent } from './match-found/match-found.component';
 import { LunchFinishedComponent } from './lunch-finished/lunch-finished.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {path: 'dashboard', component: DashboardComponent},
   { path: 'user', component: UserComponent },
+  { path: 'createuser', component: CreateUserComponent },
   { path: 'search', component: SearchComponent },
   { path: 'searching', component: SearchingMatchComponent },
   { path: 'matchfound', component: MatchFoundComponent },
