@@ -8,7 +8,6 @@ import { UserComponent } from './user/user.component';
 import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { SearchingMatchComponent } from './searching-match/searching-match.component';
-import { MatchFoundComponent } from './match-found/match-found.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { LunchFinishedComponent } from './lunch-finished/lunch-finished.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +28,6 @@ import { NgModel } from '@angular/forms';
     UserComponent,
     SearchComponent,
     SearchingMatchComponent,
-    MatchFoundComponent,
     DialogComponent,
     LunchFinishedComponent,
     DashboardComponent,
